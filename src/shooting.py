@@ -5,6 +5,7 @@ pygame.display.set_caption("Alien Invasion")
 myspace=pygame.image.load("C:\\Users\\vidha\\Desktop\\Mini Projects\\pygame\\images\\ship.png").convert()
 pygame.display.set_icon(myspace)
 pygame.display.flip()
+clock=pygame.time.Clock()
 x=280
 y=465
 running=True
@@ -22,6 +23,8 @@ while running:
         x-=1
     if keys[pygame.K_RIGHT]:
         x+=1
+    pygame.display.flip()
+    clock.tick(150)
     screen.blit(myspace,(x,y))
     pygame.display.update()
 pygame.quit()
